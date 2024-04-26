@@ -6,7 +6,7 @@ const Home = () => {
     const data = useContext(AuthContext)
     console.log(data)
     return (
-        <div>
+        <div className='w-[100%] md:w-[95%] lg:w-[90%]'>
             <h1>Home</h1>
         </div>
     );
