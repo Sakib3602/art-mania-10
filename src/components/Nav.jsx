@@ -1,6 +1,16 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthProvaider";
 
 const Nav = () => {
+  const {logout} = useContext(AuthContext)
+  function handLogOut(){
+    logout()
+  .then(()=>{
+    console.log("user log out")
+  })
+  .catch()
+  }
   return (
     <>
       <div className="navbar w-[100%] md:w-[95%] lg:w-[90%] m-auto  border-black border-[3px] border-solid  lg:h-[100px]">
@@ -41,6 +51,7 @@ const Nav = () => {
           <Link to={"/register"}>
             <a className="btn">Register</a>
           </Link>
+          <button onClick={handLogOut} className="btn">Sign Out</button>
           <div className="w-10 rounded-full">
             <img
               alt="Tailwind CSS Navbar component"
