@@ -5,6 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AuthProvaider from "./AuthProvaider";
 import Home from "./components/Home";
 import Root from "./components/Root";
+import ViewDetails from "./components/ViewDetails";
+import Registration from "./Registration";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +16,16 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader : ()=> fetch('http://localhost:9000/homecard')
+      },
+      {
+        path: "/viewDetails/:id",
+        element: <ViewDetails></ViewDetails>,
+        loader : ({params})=> fetch(`http://localhost:9000/homecard/${params.id}`)
+      },
+      {
+        path: '/register',
+        element: <Registration></Registration>
       },
     ]
   },
