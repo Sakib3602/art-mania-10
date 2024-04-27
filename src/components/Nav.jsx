@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvaider";
 
 const Nav = () => {
-  const {logout} = useContext(AuthContext)
+  const {logout, person} = useContext(AuthContext)
   function handLogOut(){
     logout()
   .then(()=>{
@@ -11,6 +11,8 @@ const Nav = () => {
   })
   .catch()
   }
+
+  console.log(person,"person from nAV")
   return (
     <>
       <div className="navbar w-[100%] md:w-[95%] lg:w-[90%] m-auto  border-black border-[3px] border-solid  lg:h-[100px]">
@@ -26,16 +28,16 @@ const Nav = () => {
               <Link to={"/"}>Home</Link>
             </li>
             <li>
-              {" "}
-              <Link to={"/craftItem"}>All Art & craft Items</Link>
+              
+              <Link to={"/allCraft"}>All Art & craft Items</Link>
             </li>
             <li>
               {" "}
-              <Link to={"/addItem"}>Add Craft Item</Link>
+              <Link to={"/addCraft"}>Add Craft Item</Link>
             </li>
             <li>
               {" "}
-              <Link to={"/addItem"}>My List</Link>
+              <Link to={"/myList"}>My List</Link>
             </li>
           </ul>
         </div>
@@ -45,13 +47,17 @@ const Nav = () => {
   <input type="checkbox" value="synthwave" className="toggle theme-controller"/>
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </label>
-          <Link to={"/login"}>
+          {
+            !person ? <>
+            <Link to={"/login"}>
             <a className="btn">Log In</a>
           </Link>
           <Link to={"/register"}>
             <a className="btn">Register</a>
           </Link>
-          <button onClick={handLogOut} className="btn">Sign Out</button>
+            </> : <button onClick={handLogOut} className="btn">Sign Out</button>
+          }
+          
           <div className="w-10 rounded-full">
             <img
               alt="Tailwind CSS Navbar component"

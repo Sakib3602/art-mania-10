@@ -8,6 +8,9 @@ import Root from "./components/Root";
 import ViewDetails from "./components/ViewDetails";
 import Registration from "./Registration";
 import LogIn from "./LogIn";
+import AllCraft from "./components/AllCraft";
+import AddCraft from "./AddCraft";
+import MyLIst from "./MyLIst";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +34,18 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <LogIn></LogIn>
+      },
+      {
+        path: '/allCraft',
+        element: <AllCraft></AllCraft>
+      },
+      {
+        path: '/addCraft',
+        element: <AddCraft></AddCraft>
+      },
+      {
+        path: '/myList',
+        element: <MyLIst></MyLIst>
       },
     ]
   },
