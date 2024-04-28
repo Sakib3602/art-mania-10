@@ -1,14 +1,49 @@
-const Footer = () => {
+import { Link } from "react-router-dom";
+import Marquee from "react-fast-marquee";const Footer = () => {
   return (
     <>
     <footer className="bg-[#10162F] mt-7 text-gray-50">
+       <div className="flex space-x-10  text-[30px]">
+        <Marquee>
+        <h1 className="ml-10">ART I MANIA</h1>
+        <br />
+        <h1 className="ml-10">ART I MANIA</h1>
+        <br />
+        <h1 className="ml-10">ART I MANIA</h1>
+        <br />
+        <h1 className="ml-10">ART I MANIA</h1>
+        <br />
+        <h1 className="ml-10">ART I MANIA</h1>
+        <br />
+        <h1 className="ml-10">ART I MANIA</h1>
+        <br />
+        <h1 className="ml-10">ART I MANIA</h1>
+        <br />
+        <h1 className="ml-10">ART I MANIA</h1>
+        <br />
+        
+
+        </Marquee>
+       
+       </div>
       <div className="container flex flex-col p-4 mx-auto md:p-8 lg:flex-row divide-gray-400">
         <ul className="self-center py-6 space-y-4 text-center sm:flex sm:space-y-0 sm:justify-around sm:space-x-4 lg:flex-1 lg:justify-start">
-          <li>Shop</li>
-          <li>About</li>
-          <li>Blog</li>
-          <li>Pricing</li>
-          <li>Contact</li>
+        <li>
+              {" "}
+              <Link to={"/"}>Home</Link>
+            </li>
+            <li>
+              
+              <Link to={"/allCraft"}>My List</Link>
+            </li>
+            <li>
+              {" "}
+              <Link to={"/addCraft"}>Add Craft Item</Link>
+            </li>
+            <li>
+              {" "}
+              <Link to={"/myList"}>All Art & craft Items</Link>
+            </li>
         </ul>
         <div className="flex flex-col justify-center pt-6 lg:pt-0">
           <div className="flex justify-center space-x-4">

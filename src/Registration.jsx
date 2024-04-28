@@ -1,12 +1,13 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvaider";
+import toast, { Toaster } from "react-hot-toast";
 
 const Registration = () => {
 
 
-  const {passwordEmailCreate} = useContext(AuthContext)
-
+  const {passwordEmailCreate, logOut} = useContext(AuthContext)
+  const navigate = useNavigate()
   
 
     function handle(e){
@@ -25,7 +26,13 @@ const Registration = () => {
 
         passwordEmailCreate(email,password)
         .then((result)=>{
-          console.log(`user created ${result}`,result)
+          toast.success('Log in with github successful!')
+          navigate('/login')
+          logOut()
+          .then()
+          .then()
+          
+          
 
         })
         .catch((error)=>{
@@ -42,6 +49,7 @@ const Registration = () => {
       <div className="text-center w-[95%] md:w-[60%] lg:w-[60%] m-auto">
       <p>Embark on your journey with our registration form, where simplicity meets security. Join us effortlessly and unlock a world of opportunities together.</p>
       </div>
+      <Toaster/>
 
 
       <form onSubmit={handle} className="grid grid-cols-1 lg:grid-cols-2 gap-10">
