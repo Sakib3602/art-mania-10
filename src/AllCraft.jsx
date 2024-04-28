@@ -41,8 +41,9 @@ const AllCraft = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            setData1(data)
+            // setData1(data)
             setLoading(false)
+
             Swal.fire({
               title: "Deleted!",
               text: "Your file has been deleted.",

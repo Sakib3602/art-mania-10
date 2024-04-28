@@ -21,6 +21,17 @@ const Home = () => {
             <p className='text-center'>Textile art weaves together tradition and innovation, crafting threads of creativity into tapestries of cultural expression. Embrace each stitch as a testament to the timeless art of handmade beauty.</p>
             </div>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 '>
+
+                {
+                    !data && <div className="🤚">
+                    <div className="👉"></div>
+                    <div className="👉"></div>
+                    <div className="👉"></div>
+                    <div className="👉"></div>
+                    <div className="🌴"></div>		
+                    <div className="👍"></div>
+                </div>
+                }
             {
                 cardData?.map(card =>  <HomeCardSection key={card._id} cardData1={card}></HomeCardSection>)
             }

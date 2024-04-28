@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvaider";
+import toast, { Toaster } from "react-hot-toast";
 
 const Nav = () => {
   const {logout, person} = useContext(AuthContext)
   function handLogOut(){
     logout()
   .then(()=>{
+    toast.error("Log Out.")
     console.log("user log out")
   })
   .catch()
@@ -102,6 +104,7 @@ const Nav = () => {
           
           
         </div>
+        <Toaster/>
       </div>
     </>
   );

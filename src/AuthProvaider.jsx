@@ -1,4 +1,10 @@
 import { createContext, useEffect, useState } from "react";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { GithubAuthProvider } from "firebase/auth";
+
+const GithubProvider = new GithubAuthProvider();
+
+const googleProvider = new GoogleAuthProvider();
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -24,6 +30,16 @@ const AuthProvaider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  // google
+  const googleLogIn = ()=>{
+    return signInWithPopup(auth, googleProvider)
+  }
+
+  // github
+  const githubLogin = ()=>{
+    return signInWithPopup(auth, GithubProvider)
+  }
+
   // signOut
   const logout = () => {
     return signOut(auth);
@@ -34,17 +50,18 @@ const AuthProvaider = ({ children }) => {
     const DeleteIt = onAuthStateChanged(auth, (user) => {
       
       if (user) {
-        setPerson(user)
+       
         
         console.log("on auth", user);
       } 
+      setPerson(user)
       
     });
 
     return () => {
       DeleteIt();
     };
-  }, []);
+  }, [person]);
 
   const info = {
     passwordEmailCreate,
@@ -52,6 +69,8 @@ const AuthProvaider = ({ children }) => {
     logout,
     person,
     setPerson,
+    googleLogIn,
+    githubLogin,
   };
   
   return <AuthContext.Provider value={info}>{children}</AuthContext.Provider>;
