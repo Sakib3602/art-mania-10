@@ -15,7 +15,7 @@ const Nav = () => {
   console.log(person,"person from nAV")
   return (
     <>
-      <div className="navbar w-[100%] md:w-[95%] lg:w-[90%] m-auto  border-black border-[3px] border-solid  lg:h-[100px]">
+      <div className="navbar  w-[100%] md:w-[95%] lg:w-[90%] m-auto  border-black border-[3px] border-solid  lg:h-[100px]">
         <div className="navbar-start">
         <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden " >
@@ -40,9 +40,11 @@ const Nav = () => {
             </li>
       </ul>
     </div>
+          <Link to={'/'}>
           <a className=" text-2xl">
             ART <span className="text-[#5131F3]">I</span> MANIA
           </a>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -73,20 +75,32 @@ const Nav = () => {
           {
             !person ? <>
             <Link to={"/login"}>
-            <a className="btn">Log In</a>
+            <a className="btn btn-sm md:btn lg:btn">Log In</a>
           </Link>
           <Link to={"/register"}>
-            <a className="btn">Register</a>
+            <a className="btn btn-sm md:btn lg:btn">Register</a>
           </Link>
-            </> : <button onClick={handLogOut} className="btn">Sign Out</button>
+            </> : " "
           }
-          
-          <div className="w-10 rounded-full tooltip  tooltip-bottom" data-tip="hello">
-            <img
+
+
+
+<div className="dropdown dropdown-end">
+  <div tabIndex={0} role="button" className=" m-1">
+  <img
               alt="Tailwind CSS Navbar component"
               src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+              className="w-[40px] h-[40px] rounded-xl"
             />
-          </div>
+  </div>
+  <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+    <li>{person?.displayName || "User"}</li>
+    <li onClick={handLogOut} ><a>Log Out</a></li>
+  </ul>
+</div>
+
+          
+          
         </div>
       </div>
     </>
