@@ -42,7 +42,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/allCraft',
-        element: <AllCraft></AllCraft>,
+        element: <PrivateRoute>
+          <AllCraft></AllCraft>
+        </PrivateRoute>,
         
         
       },
@@ -63,9 +65,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/update/:id',
-        element: <PrivateRoute>
+        element: 
           <Update></Update>
-        </PrivateRoute>
+        
       },
     ]
   },

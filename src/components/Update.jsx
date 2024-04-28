@@ -53,7 +53,7 @@ const Update = () => {
   }
   return (
     <div className="w-[80%] min-h-[500px] border-[15px] border-black border-solid mt-10 m-auto p-10 rounded-3xl">
-      <h1 className="text-[40px] font-[700] text-center">Update The Data</h1>
+      <h1 className="text-[40px] font-[700] text-center">UpDate</h1>
       <div className="text-center w-[95%] md:w-[60%] lg:w-[60%] m-auto">
         <p>
           Embark on your journey with our registration form, where simplicity
