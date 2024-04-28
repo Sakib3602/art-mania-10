@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
+import { AuthContext } from "../AuthProvaider";
 
 const Update = () => {
   const {id} = useParams();
   console.log(id);
+
+  const {person} = useContext(AuthContext)
 
   function handle(e) {
     e.preventDefault();
@@ -43,6 +47,7 @@ const Update = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+          form.reset()
         alert("updated");
       });
   }
@@ -146,6 +151,7 @@ const Update = () => {
             required
             type="text"
             name="email"
+            value={person.email || ''}
             className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]"
             style={{ boxShadow: "0px 0px 0px 3px black" }}
           />

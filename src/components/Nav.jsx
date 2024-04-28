@@ -17,6 +17,29 @@ const Nav = () => {
     <>
       <div className="navbar w-[100%] md:w-[95%] lg:w-[90%] m-auto  border-black border-[3px] border-solid  lg:h-[100px]">
         <div className="navbar-start">
+        <div className="dropdown">
+      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden " >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 " fill="none" viewBox="0 0 24 24" stroke="currentColor" ><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+      </div>
+      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+      <li>
+              {" "}
+              <Link to={"/"}>Home</Link>
+            </li>
+            <li>
+              
+              <Link to={"/allCraft"}>My List</Link>
+            </li>
+            <li>
+              {" "}
+              <Link to={"/addCraft"}>Add Craft Item</Link>
+            </li>
+            <li>
+              {" "}
+              <Link to={"/myList"}>All Art & craft Items</Link>
+            </li>
+      </ul>
+    </div>
           <a className=" text-2xl">
             ART <span className="text-[#5131F3]">I</span> MANIA
           </a>
@@ -58,7 +81,7 @@ const Nav = () => {
             </> : <button onClick={handLogOut} className="btn">Sign Out</button>
           }
           
-          <div className="w-10 rounded-full">
+          <div className="w-10 rounded-full tooltip  tooltip-bottom" data-tip="hello">
             <img
               alt="Tailwind CSS Navbar component"
               src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"

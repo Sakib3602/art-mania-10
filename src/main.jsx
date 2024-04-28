@@ -15,6 +15,7 @@ import AddItem from "./components/AddItem";
 import AllCraft from "./AllCraft";
 import TableView from "./TableView";
 import Update from "./components/Update";
+import PrivateRoute from "./components/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -47,7 +48,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/addCraft',
-        element: <AddItem></AddItem>
+        element: <AddItem></AddItem>,
+        
       },
       {
         path: '/myList',
@@ -61,7 +63,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/update/:id',
-        element: <Update></Update>
+        element: <PrivateRoute>
+          <Update></Update>
+        </PrivateRoute>
       },
     ]
   },

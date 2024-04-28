@@ -5,7 +5,7 @@ const MyLIst = () => {
 
     const data = useLoaderData()
     
-    // console.log(data)
+    console.log(data)
     return (
         <div className="w-[80%] md:w-[95%] m-auto mt-10">
             <h1 className="text-[43px] text-center">MY ART & CRAFT</h1>

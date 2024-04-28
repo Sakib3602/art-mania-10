@@ -53,6 +53,7 @@ const AuthProvaider = ({ children }) => {
     person,
     setPerson,
   };
+  
   return <AuthContext.Provider value={info}>{children}</AuthContext.Provider>;
 };
 
