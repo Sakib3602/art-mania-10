@@ -8,9 +8,13 @@ import Root from "./components/Root";
 import ViewDetails from "./components/ViewDetails";
 import Registration from "./Registration";
 import LogIn from "./LogIn";
-import AllCraft from "./components/AllCraft";
-import AddCraft from "./AddCraft";
+
 import MyLIst from "./MyLIst";
+// import PrivateRoute from "./components/PrivateRoute";
+import AddItem from "./components/AddItem";
+import AllCraft from "./AllCraft";
+import TableView from "./TableView";
+import Update from "./components/Update";
 
 const router = createBrowserRouter([
   {
@@ -37,15 +41,27 @@ const router = createBrowserRouter([
       },
       {
         path: '/allCraft',
-        element: <AllCraft></AllCraft>
+        element: <AllCraft></AllCraft>,
+        
+        
       },
       {
         path: '/addCraft',
-        element: <AddCraft></AddCraft>
+        element: <AddItem></AddItem>
       },
       {
         path: '/myList',
-        element: <MyLIst></MyLIst>
+        element: <MyLIst></MyLIst>,
+        loader : ()=> fetch('http://localhost:9000/addItemData')
+      },
+      {
+        path: '/myList/:id',
+        element: <TableView></TableView>,
+        loader : ({params})=> fetch(`http://localhost:9000/addItemData/${params.id}`)
+      },
+      {
+        path: '/update/:id',
+        element: <Update></Update>
       },
     ]
   },

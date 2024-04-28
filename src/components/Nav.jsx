@@ -29,7 +29,7 @@ const Nav = () => {
             </li>
             <li>
               
-              <Link to={"/allCraft"}>All Art & craft Items</Link>
+              <Link to={"/allCraft"}>My List</Link>
             </li>
             <li>
               {" "}
@@ -37,7 +37,7 @@ const Nav = () => {
             </li>
             <li>
               {" "}
-              <Link to={"/myList"}>My List</Link>
+              <Link to={"/myList"}>All Art & craft Items</Link>
             </li>
           </ul>
         </div>
