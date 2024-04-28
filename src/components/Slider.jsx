@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import { useTypewriter, Cursor } from 'react-simple-typewriter'
 
 // import Swiper styles
 import 'swiper/css';
@@ -10,9 +10,14 @@ import 'swiper/css';
 import {  Autoplay,Grid, Pagination, Navigation } from 'swiper/modules';
 
 const Slider = () => {
+    const [text] = useTypewriter({
+        words: ['Art','Craft','Transform','Sculpt','Imagine'],
+        loop: 3,
+        onLoopDone: () => console.log(`loop completed after 3 runs.`)
+      })
     return (
         <>
-        <h1 className='text-[30px] lg:text-[40px] md:text-[40px] font-[700]'>Choose Your Dream Art</h1>
+        <h1 className='text-[30px] lg:text-[40px] md:text-[40px] font-[700]'>Choose Your Dream {text} <Cursor cursorColor='red' /></h1>
       <Swiper
         slidesPerView={3}
         
