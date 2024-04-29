@@ -16,6 +16,7 @@ import AllCraft from "./AllCraft";
 import TableView from "./TableView";
 import Update from "./components/Update";
 import PrivateRoute from "./components/PrivateRoute";
+import Contact from "./components/Contact";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +70,12 @@ const router = createBrowserRouter([
         path: '/update/:id',
         element: 
           <Update></Update>
+        
+      },
+      {
+        path: '/contact',
+        element: 
+          <Contact></Contact>
         
       },
     ]

@@ -5,6 +5,7 @@ import Hero from './Hero';
 import Slider from './Slider';
 import { useLoaderData } from 'react-router-dom';
 import HomeCardSection from './HomeCardSection';
+import ReviewSection from './ReviewSection';
 
 const Home = () => {
     const data = useContext(AuthContext)
@@ -36,6 +37,8 @@ const Home = () => {
                 cardData?.map(card =>  <HomeCardSection key={card._id} cardData1={card}></HomeCardSection>)
             }
             </div>
+
+            <ReviewSection></ReviewSection>
            
         </div>
     );

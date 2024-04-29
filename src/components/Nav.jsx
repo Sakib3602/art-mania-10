@@ -40,6 +40,10 @@ const Nav = () => {
               {" "}
               <Link to={"/myList"}>All Art & craft Items</Link>
             </li>
+            <li>
+              {" "}
+              <Link to={"/contact"}>Contact Us</Link>
+            </li>
       </ul>
     </div>
           <Link to={'/'}>
@@ -65,6 +69,10 @@ const Nav = () => {
             <li>
               {" "}
               <Link to={"/myList"}>All Art & craft Items</Link>
+            </li>
+            <li>
+              {" "}
+              <Link to={"/contact"}>Contact Us</Link>
             </li>
           </ul>
         </div>
