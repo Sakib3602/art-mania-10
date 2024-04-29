@@ -20,28 +20,34 @@ export const AuthContext = createContext(null);
 
 const AuthProvaider = ({ children }) => {
     const [person,setPerson] = useState(null)
+    const [mainLoading, setMainLoading] = useState(true)
 
   // create user
   const passwordEmailCreate = (email, password) => {
+    setMainLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);
   };
   // user sign in with email pass
   const userSignIn = (email, password) => {
+    setMainLoading(true)
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   // google
   const googleLogIn = ()=>{
+    setMainLoading(true)
     return signInWithPopup(auth, googleProvider)
   }
 
   // github
   const githubLogin = ()=>{
+    setMainLoading(true)
     return signInWithPopup(auth, GithubProvider)
   }
 
   // signOut
   const logout = () => {
+    setMainLoading(true)
     return signOut(auth);
   };
 
@@ -49,12 +55,8 @@ const AuthProvaider = ({ children }) => {
   useEffect(() => {
     const DeleteIt = onAuthStateChanged(auth, (user) => {
       
-      if (user) {
-       
-        
-        console.log("on auth", user);
-      } 
       setPerson(user)
+      setMainLoading(false)
       
     });
 
@@ -71,6 +73,7 @@ const AuthProvaider = ({ children }) => {
     setPerson,
     googleLogIn,
     githubLogin,
+    mainLoading,
   };
   
   return <AuthContext.Provider value={info}>{children}</AuthContext.Provider>;

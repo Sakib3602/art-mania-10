@@ -1,3 +1,4 @@
+
 import { Link, useLoaderData } from "react-router-dom";
 
 
@@ -6,8 +7,13 @@ const MyLIst = () => {
     const data = useLoaderData()
     
     console.log(data)
+
+    
+
+    
     return (
         <div className="w-[80%] md:w-[95%] m-auto mt-10">
+
             <h1 className="text-[43px] text-center">MY ART & CRAFT</h1>
             <div className="w-[94%] md:w-[60%] lg:w-[60%] m-auto text-center">
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis expedita optio porro at, temporibus labore ea error similique eos sint!</p>

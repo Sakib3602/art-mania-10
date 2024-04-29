@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Hero = () => {
   return (
     <div>
@@ -16,16 +18,18 @@ const Hero = () => {
 
               <button
                 type="button"
-                className="px-8 py-3 m-2 text-lg font-semibold rounded bg-gray-800 text-gray-50"
+                className="px-8 py-3 m-2 hover:bg-transparent hover:text-black hover:border-[1px] hover:border-solid hover:border-black text-lg font-semibold rounded bg-gray-800 text-gray-50"
               >
-                Get started
+                Explore
               </button>
+              <Link to={'/contact'}>
               <button
                 type="button"
-                className="px-8 py-3 m-2 text-lg border rounded border-gray-700 text-gray-900"
+                className="px-8 py-3 m-2 hover:bg-black hover:text-white text-lg border rounded border-gray-700 text-gray-900"
               >
-                Learn more
+                Contact
               </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -47,13 +47,13 @@ const Nav = () => {
       </ul>
     </div>
           <Link to={'/'}>
-          <a className=" text-2xl">
-            ART <span className="text-[#5131F3]">I</span> MANIA
+          <a className="text-xl lg:text-3xl md:text-3xl font-[600]">
+            ART <span className="text-[#5131F3] ">I</span> MANIA
           </a>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal text-[16px] font-[400] px-1">
             <li>
               {" "}
               <Link to={"/"}>Home</Link>

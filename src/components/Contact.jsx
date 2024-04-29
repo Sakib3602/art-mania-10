@@ -7,7 +7,7 @@ const Contact = () => {
 	<div className="flex flex-col justify-between">
 		<div className="space-y-2">
 			<h2 className="text-4xl font-bold leading-tight lg:text-5xl text-black">Let's talk!</h2>
-			<div className="text-black">Vivamus in nisl metus? Phasellus.</div>
+			<div className="text-black">Discover, connect, thrive.....</div>
 		</div>
 
         <div>
