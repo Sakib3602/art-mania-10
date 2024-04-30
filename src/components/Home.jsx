@@ -6,7 +6,7 @@ import Slider from './Slider';
 import { useLoaderData } from 'react-router-dom';
 import HomeCardSection from './HomeCardSection';
 import ReviewSection from './ReviewSection';
-
+import Meet from "./Meet";
 const Home = () => {
     const data = useContext(AuthContext)
     console.log(data)
@@ -41,6 +41,7 @@ const Home = () => {
             <div className=''>
 
             </div>
+            <Meet></Meet>
             <ReviewSection></ReviewSection>
 
            

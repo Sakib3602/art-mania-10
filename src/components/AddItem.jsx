@@ -1,11 +1,10 @@
 import toast, { Toaster } from "react-hot-toast";
 
 const AddItem = () => {
-  function handle(e){
-
-    e.preventDefault()
+  function handle(e) {
+    e.preventDefault();
     const form = e.target;
-   
+
     const email = form.email.value;
     const photo = form.photo.value;
     const itemName = form.itemName.value;
@@ -18,78 +17,156 @@ const AddItem = () => {
     const username = form.username.value;
 
     const addItemData = {
-      email,photo,itemName,price,ratings,subcategory,customization,process,stock,username
-    }
+      email,
+      photo,
+      itemName,
+      price,
+      ratings,
+      subcategory,
+      customization,
+      process,
+      stock,
+      username,
+    };
 
     // console.log(addItemData)
-    
 
-    fetch("http://localhost:9000/addItemData",{
+    fetch("http://localhost:9000/addItemData", {
       method: "POST",
       headers: {
-        "content-type" : "application/json"
+        "content-type": "application/json",
       },
-      body: JSON.stringify(addItemData)
+      body: JSON.stringify(addItemData),
     })
-    .then(res => res.json())
-    .then(data =>{
-      toast.success('Item Added successful!')
-    })
-
+      .then((res) => res.json())
+      .then((data) => {
+        toast.success("Item Added successful!");
+      });
   }
   return (
     <div className="w-[80%] min-h-[500px] border-[15px] border-black border-solid mt-10 m-auto p-10 rounded-3xl">
       <h1 className="text-[40px] font-[700] text-center">Add Arts.</h1>
       <div className="text-center w-[95%] md:w-[60%] lg:w-[60%] m-auto">
-      <p>Embark on your journey with our registration form, where simplicity meets security. Join us effortlessly and unlock a world of opportunities together.</p>
+        <p>
+          Embark on your journey with our registration form, where simplicity
+          meets security. Join us effortlessly and unlock a world of
+          opportunities together.
+        </p>
       </div>
 
+      <form
+        onSubmit={handle}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-10"
+      >
+        <div className="w-full">
+          <h1 className="text-[20px]">Photo Url</h1>
+          <input
+            required
+            type="text"
+            name="photo"
+            className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]"
+            style={{ boxShadow: "0px 0px 0px 3px black" }}
+          />
+        </div>
+        <div className="w-full">
+          <h1 className="text-[20px]">Item Name</h1>
+          <input
+            required
+            type="text"
+            name="itemName"
+            className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]"
+            style={{ boxShadow: "0px 0px 0px 3px black" }}
+          />
+        </div>
+        <div className="w-full">
+          <h1 className="text-[20px]">Price : </h1>
+          <input
+            type="text"
+            name="price"
+            className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]"
+            style={{ boxShadow: "0px 0px 0px 3px black" }}
+          />
+        </div>
+        <div className="w-full">
+          <h1 className="text-[20px]">Ratings</h1>
+          <input
+            required
+            type="text"
+            name="ratings"
+            className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]"
+            style={{ boxShadow: "0px 0px 0px 3px black" }}
+          />
+        </div>
+        <div className="w-full">
+          <h1 className="text-[20px]">Subcategory Name</h1>
+          <input
+            required
+            type="text"
+            name="subcategory"
+            className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]"
+            style={{ boxShadow: "0px 0px 0px 3px black" }}
+          />
+        </div>
+        {/* implement dropdown */}
+       
+        {/* implement dropdown */}
+        <div className="w-full">
+          <h1 className="text-[20px]">Customization Yes/No</h1>
+          <input
+            required
+            type="text"
+            name="customization"
+            className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]"
+            style={{ boxShadow: "0px 0px 0px 3px black" }}
+          />
+        </div>
+        <div className="w-full">
+          <h1 className="text-[20px]">Process Time</h1>
+          <input
+            required
+            type="text"
+            name="process"
+            className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]"
+            style={{ boxShadow: "0px 0px 0px 3px black" }}
+          />
+        </div>
+        <div className="w-full">
+          <h1 className="text-[20px]">Stock Status</h1>
+          <input
+            required
+            type="text"
+            name="stock"
+            className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]"
+            style={{ boxShadow: "0px 0px 0px 3px black" }}
+          />
+        </div>
+        <div className="w-full">
+          <h1 className="text-[20px]">User Email</h1>
+          <input
+            required
+            type="text"
+            name="email"
+            className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]"
+            style={{ boxShadow: "0px 0px 0px 3px black" }}
+          />
+        </div>
+        <div className="w-full">
+          <h1 className="text-[20px]">User Name</h1>
+          <input
+            required
+            type="text"
+            name="username"
+            className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]"
+            style={{ boxShadow: "0px 0px 0px 3px black" }}
+          />
+        </div>
 
-      <form onSubmit={handle}  className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <div className="w-full">
-        <h1 className="text-[20px]">Photo Url</h1>
-        <input required type="text" name="photo" className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]" style={{ boxShadow: '0px 0px 0px 3px black'} } />
-        </div>
-        <div className="w-full">
-        <h1 className="text-[20px]">Item Name</h1>
-        <input required type="text" name="itemName" className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]" style={{ boxShadow: '0px 0px 0px 3px black'} } />
-        </div>
-        <div className="w-full">
-        <h1 className="text-[20px]">Price : </h1>
-        <input type="text" name="price" className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]" style={{ boxShadow: '0px 0px 0px 3px black'} } />
-        </div>
-        <div className="w-full">
-        <h1 className="text-[20px]">Ratings</h1>
-        <input required type="text" name="ratings" className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]" style={{ boxShadow: '0px 0px 0px 3px black'} } />
-        </div>
-        <div className="w-full">
-        <h1 className="text-[20px]">Subcategory Name</h1>
-        <input required type="text" name="subcategory" className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]" style={{ boxShadow: '0px 0px 0px 3px black'} } />
-        </div>
-        <div className="w-full">
-        <h1 className="text-[20px]">Customization Yes/No</h1>
-        <input required type="text" name="customization" className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]" style={{ boxShadow: '0px 0px 0px 3px black'} } />
-        </div>
-        <div className="w-full">
-        <h1 className="text-[20px]">Process Time</h1>
-        <input required type="text" name="process" className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]" style={{ boxShadow: '0px 0px 0px 3px black'} } />
-        </div>
-        <div className="w-full">
-        <h1 className="text-[20px]">Stock Status</h1>
-        <input required type="text" name="stock" className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]" style={{ boxShadow: '0px 0px 0px 3px black'} } />
-        </div>
-        <div className="w-full">
-        <h1 className="text-[20px]">User Email</h1>
-        <input required type="text" name="email" className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]" style={{ boxShadow: '0px 0px 0px 3px black'} } />
-        </div>
-        <div className="w-full">
-        <h1 className="text-[20px]">User Name</h1>
-        <input required type="text" name="username" className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]" style={{ boxShadow: '0px 0px 0px 3px black'} } />
-        </div>
-       
         <div className="w-full col-span-2">
-            <input  className="btn w-full btn-outline" type="submit" value="SUBMIT" />
-       
+          <input
+            className="btn w-full btn-outline"
+            type="submit"
+            value="SUBMIT"
+          />
         </div>
       </form>
       <Toaster></Toaster>
