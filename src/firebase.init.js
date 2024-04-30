@@ -1,17 +1,18 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+// require('dotenv').config()
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-require('dotenv').config()
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.VITE_APIKEY,
-  authDomain: process.env.VITE_AUTHDOMAIN,
-  projectId: process.env.VITE_PROJECTID,
-  storageBucket:process.env.VITE_STORAGE ,
-  messagingSenderId: process.env.VITE_MASSAGE,
-  appId: process.env.VITE_APPID
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGE,
+  messagingSenderId: import.meta.env.VITE_MASSAGE,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase

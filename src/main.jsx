@@ -28,12 +28,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader : ()=> fetch(' https://artandcraft-exg1s96rd-sakib-sarkar-emons-projects.vercel.app/homecard')
+        loader : ()=> fetch(' https://artandcraft.vercel.app/homecard')
       },
       {
         path: "/viewDetails/:id",
         element: <ViewDetails></ViewDetails>,
-        loader : ({params})=> fetch(` https://artandcraft-exg1s96rd-sakib-sarkar-emons-projects.vercel.app/homecard/${params.id}`)
+        loader : ({params})=> fetch(` https://artandcraft.vercel.app/homecard/${params.id}`)
       },
       {
         path: '/register',
@@ -61,12 +61,12 @@ const router = createBrowserRouter([
       {
         path: '/myList',
         element: <MyLIst></MyLIst>,
-        loader : ()=> fetch(' https://artandcraft-exg1s96rd-sakib-sarkar-emons-projects.vercel.app/addItemData')
+        loader : ()=> fetch(' https://artandcraft.vercel.app/addItemData')
       },
       {
         path: '/myList/:id',
         element: <TableView></TableView>,
-        loader : ({params})=> fetch(` https://artandcraft-exg1s96rd-sakib-sarkar-emons-projects.vercel.app/addItemData/${params.id}`)
+        loader : ({params})=> fetch(` https://artandcraft.vercel.app/addItemData/${params.id}`)
       },
       {
         path: '/update/:id',

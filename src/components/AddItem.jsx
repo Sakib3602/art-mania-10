@@ -34,7 +34,7 @@ const AddItem = () => {
 
     // console.log(addItemData)
 
-    fetch(" https://artandcraft-exg1s96rd-sakib-sarkar-emons-projects.vercel.app/addItemData", {
+    fetch(" https://artandcraft.vercel.app/addItemData", {
       method: "POST",
       headers: {
         "content-type": "application/json",

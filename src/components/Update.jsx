@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../AuthProvaider";
+import toast, { Toaster } from "react-hot-toast";
 
 const Update = () => {
   const {id} = useParams();
@@ -38,7 +39,7 @@ const Update = () => {
 
     console.log(updateItemData)
 
-    fetch(` https://artandcraft-exg1s96rd-sakib-sarkar-emons-projects.vercel.app/update/${id}`, {
+    fetch(` https://artandcraft.vercel.app/update/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -48,7 +49,7 @@ const Update = () => {
       .then((res) => res.json())
       .then((data) => {
           form.reset()
-        alert("updated");
+          toast.success("Updated Successful!");
       });
   }
   return (
@@ -175,6 +176,7 @@ const Update = () => {
           />
         </div>
       </form>
+      <Toaster></Toaster>
     </div>
   );
 };

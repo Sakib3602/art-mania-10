@@ -11,7 +11,7 @@ const AllCraft = () => {
   const { person } = useContext(AuthContext);
   console.log(person.email, "email");
   useEffect(() => {
-    fetch(` https://artandcraft-exg1s96rd-sakib-sarkar-emons-projects.vercel.app/addItemValue/${person.email}`)
+    fetch(` https://artandcraft.vercel.app/addItemValue/${person.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -35,7 +35,7 @@ const AllCraft = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(` https://artandcraft-exg1s96rd-sakib-sarkar-emons-projects.vercel.app/deletedRoute/${e}`, {
+        fetch(` https://artandcraft.vercel.app/deletedRoute/${e}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
