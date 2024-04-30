@@ -1,18 +1,25 @@
 import { Link } from "react-router-dom";
-
+import { Fade } from "react-awesome-reveal";
 const Hero = () => {
   return (
     <div>
       <section>
         <div className="border-black border-[3px] mt-5 border-solid">
           <div className="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 text-gray-900">
+
+          <Fade direction="down">
+
             <h1 className="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl text-gray-900">
               Unraveling Creativity in Textiles Art.
             </h1>
+            </Fade>
+            <Fade delay={500}>
             <p className="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl text-gray-900">
               Dive into the vibrant world of textile arts, where tradition meets
               innovation in a tapestry of color, texture, and technique.
             </p>
+            </Fade>
+            <Fade direction="up">
             <div className="flex flex-wrap justify-center">
             
 
@@ -31,6 +38,8 @@ const Hero = () => {
               </button>
               </Link>
             </div>
+          </Fade>
+           
           </div>
         </div>
         <img

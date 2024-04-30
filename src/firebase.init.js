@@ -3,15 +3,15 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-
+require('dotenv').config()
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCC2-O-615upoUgbzmay8UBkYo7z-pAEL8",
-  authDomain: "artandcraft-f5054.firebaseapp.com",
-  projectId: "artandcraft-f5054",
-  storageBucket: "artandcraft-f5054.appspot.com",
-  messagingSenderId: "997932478053",
-  appId: "1:997932478053:web:27743b3e240927204b208c"
+  apiKey: process.env.VITE_APIKEY,
+  authDomain: process.env.VITE_AUTHDOMAIN,
+  projectId: process.env.VITE_PROJECTID,
+  storageBucket:process.env.VITE_STORAGE ,
+  messagingSenderId: process.env.VITE_MASSAGE,
+  appId: process.env.VITE_APPID
 };
 
 // Initialize Firebase

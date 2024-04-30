@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { AuthContext } from "../AuthProvaider";
 
 const AddItem = () => {
+  const {person} = useContext(AuthContext)
   function handle(e) {
     e.preventDefault();
     const form = e.target;
@@ -31,7 +34,7 @@ const AddItem = () => {
 
     // console.log(addItemData)
 
-    fetch("http://localhost:9000/addItemData", {
+    fetch(" https://artandcraft-exg1s96rd-sakib-sarkar-emons-projects.vercel.app/addItemData", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -146,6 +149,7 @@ const AddItem = () => {
             required
             type="text"
             name="email"
+            value={person && person?.email}
             className="w-full border-[3px] shadow shadow-black  border-black border-solid h-[50px]"
             style={{ boxShadow: "0px 0px 0px 3px black" }}
           />

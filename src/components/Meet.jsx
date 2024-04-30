@@ -1,3 +1,4 @@
+import { Fade } from "react-awesome-reveal";
 
 
 const Meet = () => {
@@ -10,7 +11,8 @@ const Meet = () => {
 			<p className="max-w-2xl text-[#10162F]">dedicated professionals committed to excellence, innovation, and driving success in every project we undertake!</p>
 		</div>
 		<div className="grid w-full grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-			<div className="space-y-4 hover:bg-[#10162F] hover:text-white p-3 border-[3px] border-black border-solid">
+			<Fade cascade damping={0.1} triggerOnce={true}>
+            <div className="space-y-4 hover:bg-[#10162F] hover:text-white p-3 border-[3px] border-black border-solid">
 				<img alt="" className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm bg-gray-500" src="https://source.unsplash.com/240x320/?portrait?0" />
 				<div className="flex flex-col items-center">
 					<h4 className="text-xl font-semibold">Hridoy</h4>
@@ -202,6 +204,7 @@ const Meet = () => {
 					</div>
 				</div>
 			</div>
+            </Fade>
 		</div>
 	</div>
 </section>

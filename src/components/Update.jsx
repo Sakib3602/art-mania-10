@@ -38,7 +38,7 @@ const Update = () => {
 
     console.log(updateItemData)
 
-    fetch(`http://localhost:9000/update/${id}`, {
+    fetch(` https://artandcraft-exg1s96rd-sakib-sarkar-emons-projects.vercel.app/update/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
