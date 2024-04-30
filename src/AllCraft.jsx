@@ -16,7 +16,7 @@ const AllCraft = () => {
       .then((data) => {
         console.log(data);
         setData1(data);
-        setLoading(false)
+        
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -41,8 +41,9 @@ const AllCraft = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            // setData1(data)
-            setLoading(false)
+            const remaning = data1.filter(d => d._id !== data._id)
+            setData1(remaning)
+           
 
             Swal.fire({
               title: "Deleted!",

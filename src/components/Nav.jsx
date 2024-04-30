@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvaider";
 import toast, { Toaster } from "react-hot-toast";
-
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from "react-tooltip";
 const Nav = () => {
   const {logout, person} = useContext(AuthContext)
   function handLogOut(){
@@ -94,7 +95,7 @@ const Nav = () => {
           }
 
 
-
+{/* <Tooltip anchorSelect="#clickable" clickable></Tooltip> */}
 <div className="dropdown dropdown-end">
   <div tabIndex={0} role="button" className=" m-1">
   <img

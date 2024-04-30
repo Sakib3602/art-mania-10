@@ -44,6 +44,10 @@ import Marquee from "react-fast-marquee";const Footer = () => {
               {" "}
               <Link to={"/myList"}>All Art & craft Items</Link>
             </li>
+            <li>
+              {" "}
+              <Link to={"/contact"}>Contact Us</Link>
+            </li>
         </ul>
         <div className="flex flex-col justify-center pt-6 lg:pt-0">
           <div className="flex justify-center space-x-4">

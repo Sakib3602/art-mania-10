@@ -1,4 +1,4 @@
-
+import toast, { Toaster } from "react-hot-toast";
 
 const AddItem = () => {
   function handle(e){
@@ -33,7 +33,7 @@ const AddItem = () => {
     })
     .then(res => res.json())
     .then(data =>{
-      alert("data is added")
+      toast.success('Item Added successful!')
     })
 
   }
@@ -92,6 +92,7 @@ const AddItem = () => {
        
         </div>
       </form>
+      <Toaster></Toaster>
     </div>
   );
 };

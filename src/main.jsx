@@ -17,11 +17,13 @@ import TableView from "./TableView";
 import Update from "./components/Update";
 import PrivateRoute from "./components/PrivateRoute";
 import Contact from "./components/Contact";
+import ErrorPage from "./ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children : [
       {
         path: "/",
